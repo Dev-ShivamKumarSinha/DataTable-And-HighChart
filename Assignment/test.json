@@ -1,0 +1,29 @@
+{
+  "report_general_stats_data": [
+    {
+      "ERR2775931_2": {
+        "percent_gc": 51,
+        "avg_sequence_length": 301,
+        "total_sequences": 1169386,
+        "percent_duplicates": 4.8685895657485645,
+        "percent_fails": 18.181818181818183
+      },
+      "ERR2775931_1": {
+        "percent_gc": 51,
+        "avg_sequence_length": 301,
+        "total_sequences": 1169386,
+        "percent_duplicates": 6.1274619849780265,
+        "percent_fails": 27.27272727272727
+      }
+    },
+    {
+      "ERR2775931_aligned_sorted": {
+        "total_reads": 1779898,
+        "mapped_reads": 309984,
+        "percentage_aligned": 17.41582944640648,
+        "general_error_rate": 0.33,
+        "mean_coverage": 0.0021
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<! DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=1">
+<title>Home</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <center><div class="container">
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Sample Name</th>
+                    <th>% Dups</th>
+                    <th>% GC</th>
+                    <th>Average Length</th>
+                    <th>Total Sequences</th>
+                </tr>
+            </thead>
+        </table>
+    </div><br><br><br><br>
+    <div id="container"></div></center>
+    
+    <script>
+        //Global Variables for storing values required for DataTable and HighChart
+
+        let parsedJson = [];                            //For storing required values for table from JSON file
+        let url = "./test.json";                        //Location where JSON file is stored
+        let ur = [];                                    //Values for unique reads are stored 
+        let dr = [];                                    //Values for duplicate reads are stored 
+        let xAxisCat = [];                              //Category values are stored
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function(){            
+            if(this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+
+                //Looping through the JSON values and transferring vlaues to global variables
+
+                for (let i in data.report_general_stats_data[0]){  
+                    var percent_duplicates = data.report_general_stats_data[0][i].percent_duplicates.toFixed(1),
+                    percent_gc = data.report_general_stats_data[0][i].percent_gc,
+                    avg_sequence_length = data.report_general_stats_data[0][i].avg_sequence_length,
+                    total_sequences = data.report_general_stats_data[0][i].total_sequences;
+                    var tempCalUr = total_sequences-((percent_duplicates/100)*total_sequences);
+                    ur.unshift(tempCalUr);
+                    var tempCaldr = (percent_duplicates/100)*total_sequences;
+                    dr.unshift(tempCaldr);
+                    xAxisCat.unshift(i);
+                    var temp = new ParsedJson(i, percent_duplicates+" %", percent_gc+" %", avg_sequence_length+" bp", total_sequences);
+                    parsedJson.push(temp);
+                } 
+
+                //Creating an instance of Assignment class
+
+                var execu = new Assignment;
+                execu.dataTable()                       //Executing table function {    nested HighChart function call    }
+            }
+        } 
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="./Index.js"></script>
+</body>
+</html>
