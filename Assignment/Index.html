@@ -5,6 +5,10 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=1">
 <title>Home</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="./Index.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
@@ -56,18 +60,14 @@
                 } 
 
                 //Creating an instance of Assignment class
-
-                var execu = new Assignment;
-                execu.dataTable()                       //Executing table function {    nested HighChart function call    }
+                console.log(parsedJson)
+                let exec = new Assignment();                   //Executing table function {    nested HighChart function call    }
+                exec.dataTable();
             }
         } 
     </script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="./Index.js"></script>
 </body>
 </html>

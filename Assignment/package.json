@@ -1,11 +1,11 @@
 {
   "name": "assignment",
   "version": "1.0.0",
-  "description": "Bionivid Assignment",
+  "description": "DataTable and HighChart Implementation",
   "main": "Index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shivam k Sinha",
+  "author": "Shivam_k_Sinha shivam.k.sinha9908@gmail.com",
   "license": "ISC"
 }

@@ -83,7 +83,7 @@ class Assignment{
                 labels: {
                     rotation: 0,
                     style: {
-                        fontSize: '8px'
+                        fontSize: '11px'
                     }
                 },
             },
