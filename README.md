@@ -7,5 +7,5 @@ Assignment
 
 Note : Use Vs-code:live-server for executing the "Index.html".
 
-![image](https://user-images.githubusercontent.com/86955574/197976451-b981a8d2-4dda-4dfd-bd79-5ec2101c782d.png)
+![image](https://user-images.githubusercontent.com/86955574/197980588-999313a7-aa86-442e-8f50-1a3dd3d7d4cc.png)
 
